@@ -1,0 +1,66 @@
+@import "variables";
+
+.card {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  min-height: 400px;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  position: relative;
+  background-color: darken($color: $grey, $amount: 3);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 150ms;
+
+  &:hover {
+    transform: scale(1.015);
+
+  }
+
+  &:active {
+    transform: scale(1.01);
+  }
+
+  img {
+    position: absolute;
+    color: white;
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: white;
+    border-radius: 2rem;
+    width: 185px;
+    height: 185px;
+    clip-path: polygon(25% 0% round, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: 100;
+  }
+
+  &__type {
+    padding: 2rem;
+    color: $blue;
+    font-weight: 300;
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    font-weight: 700;
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $grey;
+    line-height: 1.5rem;
+    letter-spacing: -0.5px;
+  }
+}

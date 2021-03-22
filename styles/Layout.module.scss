@@ -1,0 +1,36 @@
+@import "variables";
+
+.app {
+  min-height: 100vh;
+  background: $grey;
+  position: relative;
+}
+
+  .content {
+    margin-top: -100px;
+    //padding-bottom: calc(#{$footer-height} + 4rem);
+    padding-bottom: $footer-height;
+
+    .top {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      color: black;
+      font-size: 1rem;
+      padding: .2rem;      
+      background-color: rgba($color: $dark, $alpha: 0.3)
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0px;
+    height: $footer-height;
+    width: 100%;
+    padding: 1rem;
+    background: $dark;
+    color: $text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

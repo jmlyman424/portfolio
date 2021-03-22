@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="202.14" viewBox="0 0 184 202.14">
+  <defs>
+    <clipPath id="card_info">
+      <path d="M135.574,0A32,32,0,0,1,163.3,16.026l34.565,60a32,32,0,0,1,0,31.947l-34.565,60A32,32,0,0,1,135.574,184H66.565a32,32,0,0,1-27.728-16.026l-34.565-60a32,32,0,0,1,0-31.947l34.565-60A32,32,0,0,1,66.565,0Z" transform="translate(184) rotate(90)" fill="#fff"/>
+    </clipPath>
+  </defs>
+</svg>
