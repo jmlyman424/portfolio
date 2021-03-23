@@ -1,12 +1,15 @@
 import Head from "next/head";
 import Card from "../components/Card";
+import Contact from "../components/Contact";
+import Resume from "../components/Resume";
+
 import styles from "../styles/Home.module.scss";
 import expansions from "../expansions";
 
 const Home = () => (
   <>
     <Head>
-      <title>Joseph Lyman | Web Developer & Grahpic Designer</title>
+      <title>Joseph Lyman | Web Developer & Graphic Designer</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
@@ -37,30 +40,12 @@ const Home = () => (
 
       {/* ===== Resume ===== */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle} id="resume">
-          Resume
-        </h2>
-        <div className={styles.resume}>Resume goes here, lol.</div>
+        <Resume />
       </section>
 
       {/* ===== Contact ===== */}
-      <section className={`${styles.contact} ${styles.test}`}>
-        <div className={styles.form__group} id="contact">
-          <h2 className={styles.form__title}>Say Hello!</h2>
-          <form action="">
-            <input
-              type="text"
-              className={styles.form__field}
-              placeholder="Your Name"
-              id="name"
-            />
-            <label htmlFor="name" className={styles.form__label}>
-              Name
-            </label>
-
-            <input type="submit" value="Submit"></input>
-          </form>
-        </div>
+      <section className={styles.contact}>
+        <Contact />
       </section>
     </main>
   </>

@@ -16,14 +16,14 @@
   }
 
   li {
-    padding: .25rem 1rem;
+    padding: 0.25rem 1rem;
     text-decoration: none;
     list-style: none;
     cursor: pointer;
-    
+
     &:hover {
-      background: rgba($color: white, $alpha: .1);
-      border-radius: 1rem;
+      background: rgba($color: white, $alpha: 0.1);
+      border-radius: $radius-lg;
     }
   }
 }

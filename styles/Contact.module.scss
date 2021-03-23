@@ -1,0 +1,99 @@
+@import "variables";
+
+.form {
+  background: white;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  width: 80%;
+
+  &__group {
+    position: relative;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 18px 0 0;
+  }
+
+  &__field {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $teal;
+    outline: 0;
+    color: $dark;
+    font-weight: 700;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 200ms;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    // Label BEFORE it's been selected/filled
+    &:placeholder-shown ~ .form__label {
+      cursor: text;
+      top: 23px; //Label position
+    }
+
+    &:focus {
+      padding-bottom: 6px;
+      border-width: 2px;
+      border-image: linear-gradient(to right, $blue, $teal);
+      border-image-slice: 1;
+    }
+
+    // Label WHILE focused
+    &:focus ~ .form__label {
+      position: absolute;
+      top: 0px;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $teal;
+      font-weight: 700;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 200ms;
+    color: $dark;
+  }
+
+  &__title {
+    color: $grey;
+    text-transform: none;
+  }
+
+  &__submit {
+    background-color: $teal;
+    color: $dark;
+    border: 0;
+    width: 50%;
+    padding: 0.5rem 0;
+    border-radius: $radius-sm;
+    font-weight: 700;
+    transition: 200ms;
+
+    &:hover {
+      cursor: pointer;
+      background: $blue;
+      color: white;
+    }
+  }
+}
+
+// Reset Input
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+#message {
+  background: orange;
+  border: 1px solid green;
+  min-height: 1000px;
+}
