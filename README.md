@@ -7,7 +7,7 @@
 ## Front-end Web Developer Portfolio!
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/jmlyman424/portfolio/main/public/demo.png" alt="Portfolio" width="600px" />
+  <img src="https://raw.githubusercontent.com/jmlyman424/portfolio/Main/public/demo.png" alt="Portfolio" width="600px" />
   <br>
 </h2>
 
