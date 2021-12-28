@@ -19,10 +19,10 @@ export default function Hero() {
         >
           {/* <div className="flex flex-col text-center justify-center lg:text-left"> */}
           <h1 className="pb-4 text-6xl font-black">
-            I create beautiful websites and clean code
+            I create beautiful, performant websites
           </h1>
           <p className="pt-2 text-gray-200 text-lg tracking-widest uppercase">
-            UX &amp; UI Designer | Web Developer
+            Frontend Web Developer
           </p>
           <div className="mt-20 inline-block">
             <Button size="lg" icon={faFileAlt} href="/#projects" color="pink">

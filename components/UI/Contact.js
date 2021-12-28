@@ -10,9 +10,13 @@ export default function Contact() {
     <form
       action=""
       name="contact"
+      method="post"
       className="max-w-[80rem] w-[58rem] p-8 text-black bg-gray-900 rounded-xl"
       data-netlify="true"
     >
+      {/* Netlify Forms hidden input */}
+      <input type="hidden" name="form-name" value="contact" />
+
       {/* NAME */}
       <div className="mb-6">
         <label htmlFor="name" className={labelStyle}>

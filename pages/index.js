@@ -24,13 +24,8 @@ export default function Home({ projects }) {
   return (
     <div>
       <Head>
-        <title>Joseph Lyman</title>
+        <title>Joseph Lyman | Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
         <link
           rel="icon"
           type="image/png"
@@ -43,6 +38,11 @@ export default function Home({ projects }) {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -51,7 +51,7 @@ export default function Home({ projects }) {
         />
         <meta
           name="description"
-          content="Web Developer who specializes in Next.js"
+          content="Joseph is a Frontend Web Developer that creates beautiful, performant websites."
         />
       </Head>
 
