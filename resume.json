@@ -1,0 +1,37 @@
+{
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React.js",
+    "Next.js",
+    "TailwindCSS",
+    "GIT",
+    "Contentful",
+    "CI/CD"
+  ],
+  "experience": [
+    {
+      "title": "Quality Control",
+      "company": "Morley Companies",
+      "dates": "March 2019 - Current",
+      "location": "Saginaw, MI",
+      "description": [
+        "Wrote an application that duplicates user template worksheets to prevent them from being overwritten and slowing down the review process.",
+        "Transitioned team over to daily digital reporting rather than submitting paper logs to provide easier and faster access to data and statistics.",
+        "Provided detailed analytics to team lead for easier and more effective reporting.",
+        "Wrote SQL queries to assist with importing data into spreadsheets to increase productivity."
+      ]
+    },
+    {
+      "title": "Creative Manager",
+      "company": "Astute Advantage",
+      "dates": "March 2018 - October 2018",
+      "location": "Bay City, MI",
+      "description": [
+        "Designed and produced client websites from start to finish using current technologies and design trends while optimizing content for mobile use.",
+        "Consulted clients with design suggestions and hosting recommendations in order to create designs based on client requests and business needs."
+      ]
+    }
+  ]
+}
