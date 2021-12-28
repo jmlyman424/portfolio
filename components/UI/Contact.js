@@ -4,13 +4,7 @@ export default function Contact() {
   const labelStyle = 'block mb-2 text-sm text-white dark:text-gray-400';
 
   const inputStyle = `w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md
-    focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 
-    `;
-  // dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500
-
-  function submitContactForm(e) {
-    e.preventDefault();
-  }
+    focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300`;
 
   return (
     <form
@@ -65,12 +59,12 @@ export default function Contact() {
       </div>
 
       {/* SUBMIT */}
-      <input
+      <button
         type="submit"
-        value="Send!"
-        onClick={submitContactForm}
         className="px-4 py-4 w-40 text-white bg-blue-700 hover:bg-blue-800 focus:bg-blue-800 rounded-md cursor-pointer transition-colors"
-      />
+      >
+        Send!
+      </button>
     </form>
   );
 }
