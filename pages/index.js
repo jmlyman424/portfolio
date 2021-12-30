@@ -1,11 +1,7 @@
 import Head from 'next/head';
 import { createClient } from 'contentful';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faLinkedin,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Hero from '../components/UI/Hero';
 import Project from '../components/UI/Project';
