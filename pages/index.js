@@ -1,5 +1,12 @@
 import Head from 'next/head';
 import { createClient } from 'contentful';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub,
+  faLinkedin,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Hero from '../components/UI/Hero';
 import Project from '../components/UI/Project';
 import Contact from '../components/UI/Contact';
@@ -137,6 +144,32 @@ export default function Home({ projects }) {
               <p className="text-normal mt-2 text-gray-100 dark:text-gray-400 text-lg font-medium sm:text-2xl">
                 Fill in the form to start a conversation
               </p>
+              <div className="flex gap-4 py-4">
+                <a
+                  href="https://github.com/jmlyman424"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
+                >
+                  <FontAwesomeIcon icon={faGithub} className="h-12 w-12" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jmlyman424/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} className="h-12 w-12" />
+                </a>
+                <a
+                  href="mailto:jmlyman424@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} className="h-12 w-12" />
+                </a>
+              </div>
             </div>
             <div className="flex justify-center">
               <Contact />
