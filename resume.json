@@ -4,23 +4,37 @@
     "CSS",
     "JavaScript",
     "React.js",
+    "Redux",
     "Next.js",
     "TailwindCSS",
-    "GIT",
-    "Contentful",
-    "CI/CD"
+    "Git",
+    "SQL",
+    "Python",
+    "R",
+    "Figma"
   ],
   "experience": [
     {
-      "title": "Quality Control",
+      "title": "Data Specialist",
       "company": "Morley Companies",
-      "dates": "March 2019 - Current",
+      "dates": "February 2022 - Current",
       "location": "Saginaw, MI",
       "description": [
-        "Wrote an application that duplicates user template worksheets to prevent them from being overwritten and slowing down the review process.",
-        "Transitioned team over to daily digital reporting rather than submitting paper logs to provide easier and faster access to data and statistics.",
-        "Provided detailed analytics to team lead for easier and more effective reporting.",
-        "Wrote SQL queries to assist with importing data into spreadsheets to increase productivity."
+        "Reduced report execution time by up to 70% by removing extraneous procedures and improving efficiencies in VBA scripts and SQL queries.",
+        "Successfully implemented SQL queries to pull data from multiple databases for reports containing information from different departments.",
+        "Worked closely with automotive and healthcare stakeholders in developing Excel dashboards to monitor daily KPIs and drive better business decisions.",
+        "Solved inconsistencies in reports with outdated procedures by writing documentation that gives clear instructions and context for each process."
+      ]
+    },
+    {
+      "title": "Quality Control",
+      "company": "Morley Companies",
+      "dates": "March 2019 - February 2022",
+      "location": "Saginaw, MI",
+      "description": [
+        "Developed an application to create worksheets for data entry which decreased case review times and prevented accidental overwrites.",
+        "Transitioned team over to daily digital reporting rather than submitting paper logs to provide easier and faster access to data and analytics.",
+        "Wrote SQL queries to import case-specific data into spreadsheets to increase productivity."
       ]
     },
     {
@@ -29,8 +43,8 @@
       "dates": "March 2018 - October 2018",
       "location": "Bay City, MI",
       "description": [
-        "Designed and produced client websites from start to finish using current technologies and design trends while optimizing content for mobile use.",
-        "Consulted clients with design suggestions and hosting recommendations in order to create designs based on client requests and business needs."
+        "Improved site traffic for clients by as much as 100% by creating websites with Search Engine Optimization as a foundational principle.",
+        "Consulted with clients to create or redesign websites and other graphic media to meet client expectations and business needs."
       ]
     }
   ]
