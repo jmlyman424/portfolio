@@ -97,13 +97,8 @@ export default function Header() {
       <div className="flex flex-wrap items-center justify-between align-middle mx-auto px-8 py-3 max-w-screen-2xl">
         <div className="flex align-middle">
           <Link href="/">
-            <a className="bg-blue-600 rounded-b-lg rounded-r-lg">
-              <h1 className="flex-basis my-auto px-2 py-1 text-white text-xl font-medium">
-                JL
-              </h1>
-            </a>
+            <a>Joseph Lyman</a>
           </Link>
-          <p className="my-auto pl-4 font-bold">Joseph M. Lyman</p>
         </div>
 
         <div className="flex align-middle">

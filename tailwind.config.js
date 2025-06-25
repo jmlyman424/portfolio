@@ -29,6 +29,9 @@ module.exports = {
           200: '#AFB1B6',
           100: '#CACBCE',
         },
+        'custom-green': '#3B9187',
+        'custom-blue': '#5D96E3',
+        'custom-bg': '#18192A',
       },
       backgroundImage: {
         streaks: "url('/img/streaks.png')",
