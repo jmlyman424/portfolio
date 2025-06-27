@@ -23,7 +23,7 @@ export default function Tag() {
       </div> */}
       <div className="pt-4">
         <Image
-          src="http://placekitten.com/800/800"
+          src="http://placecats.com/800/800"
           height="300"
           width="300"
           objectFit="contain"

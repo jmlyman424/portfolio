@@ -32,7 +32,7 @@ export default function Project({ project }) {
         <div className="absolute inset-0">
           <Image
             src={`https:${image.file.url}`}
-            // src="https://placekitten.com/400/400"
+            // src="https://placecats.com/400/400"
             alt={image.description}
             height="200"
             width="400"
