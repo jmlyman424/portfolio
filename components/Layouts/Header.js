@@ -36,8 +36,8 @@ function NavLinks({ styles }) {
     if (!navLinks.enabled) return null;
     return (
       <Popover.Button as="li" key={navLinks.label}>
-        <Link href={navLinks.path}>
-          <a className={styles}>{navLinks.label}</a>
+        <Link href={navLinks.path} className={styles}>
+          {navLinks.label}
         </Link>
       </Popover.Button>
     );
@@ -96,9 +96,7 @@ export default function Header() {
     <header className="sticky z-50 top-0 w-full bg-white shadow">
       <div className="flex flex-wrap items-center justify-between align-middle mx-auto px-8 py-3 max-w-screen-2xl">
         <div className="flex align-middle">
-          <Link href="/">
-            <a>Joseph Lyman</a>
-          </Link>
+          <Link href="/">Joseph Lyman</Link>
         </div>
 
         <div className="flex align-middle">

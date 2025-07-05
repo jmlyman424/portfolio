@@ -1,5 +1,5 @@
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Button from '../components/UI/Button';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function success() {
   return (

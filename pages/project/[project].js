@@ -25,7 +25,7 @@ export default function Project() {
           src="http://placecats.com/800/800"
           height="300"
           width="300"
-          objectFit="contain"
+          style={{ objectFit: 'cover' }}
           className="mx-auto rounded-full"
         />
       </div>

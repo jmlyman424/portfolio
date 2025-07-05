@@ -147,7 +147,7 @@ export default function Home({ projects }) {
                   rel="noreferrer"
                   className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
                 >
-                  <FontAwesomeIcon icon={faGithub} className="h-12 w-12" />
+                  <FontAwesomeIcon icon={faGithub} size="3x" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/jmlyman424/"
@@ -155,7 +155,7 @@ export default function Home({ projects }) {
                   rel="noreferrer"
                   className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className="h-12 w-12" />
+                  <FontAwesomeIcon icon={faLinkedin} size="3x" />
                 </a>
                 <a
                   href="mailto:jmlyman424@gmail.com"
@@ -163,7 +163,7 @@ export default function Home({ projects }) {
                   rel="noreferrer"
                   className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
                 >
-                  <FontAwesomeIcon icon={faEnvelope} className="h-12 w-12" />
+                  <FontAwesomeIcon icon={faEnvelope} size="3x" />
                 </a>
               </div>
             </div>

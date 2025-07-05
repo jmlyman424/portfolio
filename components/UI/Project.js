@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { Fragment, useState, useRef } from 'react';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Dialog, Transition } from '@headlessui/react';
+import {
+  Dialog,
+  DialogTitle,
+  DialogBackdrop,
+  Transition,
+  TransitionChild,
+} from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowRight,
@@ -36,7 +42,7 @@ export default function Project({ project }) {
             alt={image.description}
             height="200"
             width="400"
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
             className="group-hover:scale-105 group-focus-visible:scale-105 transition duration-500 ease-in-out"
           />
         </div>
@@ -68,7 +74,7 @@ export default function Project({ project }) {
           initialFocus={closeModal}
           className="z-[100] fixed inset-0 overflow-y-auto"
         >
-          <Transition.Child
+          <TransitionChild
             as={Fragment}
             enter="ease-out duration-300"
             enterFrom="opacity-0"
@@ -78,7 +84,7 @@ export default function Project({ project }) {
             leaveTo="opacity-0"
           >
             <div className="px-4 min-h-screen text-center">
-              <Dialog.Overlay className="fixed inset-0 bg-black opacity-80" />
+              <DialogBackdrop className="fixed inset-0 bg-black opacity-80" />
 
               {/* This element is to trick the browser into centering the modal contents. */}
               <span
@@ -89,7 +95,7 @@ export default function Project({ project }) {
               </span>
 
               {/* Actual Overlay bit... */}
-              <Transition.Child
+              <TransitionChild
                 as={Fragment}
                 enter="ease-out duration-300"
                 enterFrom="translate-y-20"
@@ -114,12 +120,12 @@ export default function Project({ project }) {
                     />
                   </button>
 
-                  <Dialog.Title
+                  <DialogTitle
                     as="h3"
                     className="text-left text-white text-4xl font-bold pr-6"
                   >
                     {title}
-                  </Dialog.Title>
+                  </DialogTitle>
 
                   {/* Tags */}
                   <ul className="flex flex-wrap gap-2 my-4">
@@ -164,9 +170,9 @@ export default function Project({ project }) {
                     </a>
                   </div>
                 </div>
-              </Transition.Child>
+              </TransitionChild>
             </div>
-          </Transition.Child>
+          </TransitionChild>
         </Dialog>
       </Transition>
     </>
@@ -178,10 +184,11 @@ function Tag({ tag }) {
 
   return (
     <li key={tag}>
-      <Link href={`/tag/${tagSlug}`}>
-        <a className="px-2 py-1 text-white text-sm font-bold bg-gray-800 rounded">
-          {tag}
-        </a>
+      <Link
+        href={`/tag/${tagSlug}`}
+        className="px-2 py-1 text-white text-sm font-bold bg-gray-800 rounded"
+      >
+        {tag}
       </Link>
     </li>
   );

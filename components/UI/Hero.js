@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-[32rem] object-cover">
-      <div className="relative z-10 inset-0 flex gap-8 p-8 pb-20 h-full md:container justify-center">
+    <div className="w-full object-cover">
+      <div className="relative h-[32rem] z-10 inset-0 flex gap-8 p-8 pb-20 justify-center">
         <Transition
           as="div"
           show
@@ -14,21 +14,20 @@ export default function Hero() {
           enterTo="translate-y-0 opacity-100"
           className="flex flex-col justify-center text-center lg:text-left"
         >
-          <h1 className="pb-4 text-6xl text-center font-black ">
+          <h1 className="pb-4 md:text-6xl text-center font-black text-4xl">
             Beautiful Interfaces
             <br />
             Clean Code <br />
-            <span className="w-full text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-custom-blue">
+            <span className="w-full text-transparent bg-clip-text bg-gradient-to-r from-[#3B9187] to-[#5D96E3]">
               Smarter Decisions
             </span>
           </h1>
         </Transition>
-      </div>
-      <div className="absolute top-1/2 transform -translate-y-1/2">
-        <Image src="/Left.svg" alt="" width="221px" height="417px" />
-      </div>
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-0">
-        <Image src="/Right.svg" alt="" width="250px" height="422px" />
+
+        <div className="absolute flex justify-between w-full min-w-6xl">
+          <Image src="/Left.svg" alt="" width="221" height="417" />
+          <Image src="/Right.svg" alt="" width="221" height="417" />
+        </div>
       </div>
     </div>
   );

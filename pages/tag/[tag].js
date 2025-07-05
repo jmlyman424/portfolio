@@ -18,15 +18,12 @@ export default function Tag() {
         Unfortunately, the tag search feature is still under development. In the
         meantime, feel free to enjoy this picture of a kitten. 😺
       </p>
-      {/* <div className="py-8">
-        <FontAwesomeIcon icon={faHeart} className="text-pink-600" size="2x" />
-      </div> */}
       <div className="pt-4">
         <Image
-          src="http://placecats.com/800/800"
+          src="https://placecats.com/800/800"
           height="300"
           width="300"
-          objectFit="contain"
+          style={{ objectFit: 'cover' }}
           className="mx-auto rounded-full"
         />
       </div>
