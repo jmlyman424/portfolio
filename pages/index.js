@@ -2,11 +2,14 @@ import Head from 'next/head';
 import { createClient } from 'contentful';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBuilding,
+  faGraduationCap,
+  faLayerGroup,
+} from '@fortawesome/free-solid-svg-icons';
 import Hero from '../components/UI/Hero';
 import ProjectCard from '../components/UI/ProjectCard';
 import Contact from '../components/UI/Contact';
-import resume from '../resume.json';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -61,73 +64,77 @@ export default function Home({ projects }) {
       {/* Hero ===== */}
       <Hero />
 
-      {/* Portfolio ===== */}
-      <div className="mx-auto p-8 pb-32">
-        <div className="relative mx-auto md:container">
-          <div className="text-center">
-            <h1
-              id="projects"
-              className="text-gray-50 text-3xl font-extrabold sm:text-5xl scroll-mt-24"
-            >
-              Portfolio
-            </h1>
-            <p className="pt-2">My Experience</p>
+      {/* About ===== */}
+      <Section id="about" header="About Joseph" />
+      <div className="flex flex-col flex-auto sm:flex-row gap-16 container mx-auto p-8 justify-center">
+        {/* Info */}
+        <div className="flex justify-center grow">
+          <div className=" flex flex-col gap-4 sm:max-w-md">
+            <p>
+              I have 8 years of experience and a deep understanding of various
+              web technologies such as HTML, CSS, JavaScript, TypeScript, and
+              React.
+            </p>
+            <p>
+              I love staying informed on the latest design trends and
+              development techniques in web development, and I'm constantly
+              learning and expanding my skill set.
+            </p>
+            <p>
+              I have a keen eye for detail and strive for perfection in every
+              project I work on. When projects depend on accurate data, I make
+              sure it's correct.
+            </p>
+            <p>
+              When I'm not designing or coding, I spend my time cycling, playing
+              disc golf, playing video games, or adventuring with my family.
+            </p>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center mt-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.sys.id} project={project} />
-            ))}
+        </div>
+
+        {/* Icons */}
+        <div className="flex flex-auto gap-4 text-center justify-center">
+          <div>
+            <FontAwesomeIcon
+              icon={faGraduationCap}
+              className="text-4xl fa-4x pb-4"
+            />
+            <p className="text-3xl font-bold text-accent-1">8+</p>
+            <p className="text-sm">Years Experience</p>
+          </div>
+          <div>
+            <FontAwesomeIcon
+              icon={faLayerGroup}
+              className="text-4xl fa-4x pb-4"
+            />
+            <p className="text-3xl font-bold text-accent-1">
+              {projects.length}
+            </p>
+            <p className="text-sm">Projects Completed</p>
+          </div>
+          <div>
+            <FontAwesomeIcon
+              icon={faBuilding}
+              className="text-4xl fa-4x pb-4"
+            />
+            <p className="text-3xl font-bold text-accent-1">8+</p>
+            <p className="text-sm">Companies Worked</p>
           </div>
         </div>
       </div>
 
-      {/* Resume ===== */}
-      <div className="mx-auto px-8 py-16">
-        <div className="relative mx-auto md:container">
-          <span className="absolute -top-4 left-4 w-32 h-2 bg-blue-500 rounded-full" />
-          <h1
-            id="resume"
-            className="tracking-tight; flex text-gray-50 text-4xl font-extrabold sm:text-5xl scroll-mt-24"
-          >
-            Resume{' '}
-          </h1>
-          <h2 className="pb-2 pt-12 text-blue-300 text-2xl">Skills</h2>
-          {/* - Skills  */}
-          <div className="flex flex-wrap gap-2">
-            {resume.skills.map((skill) => (
-              <p key={skill} className="px-4 py-2 bg-gray-900 rounded">
-                {skill}
-              </p>
-            ))}
-          </div>
-          {/* - Experience */}
-          <h2 className="pb-2 pt-12 text-blue-300 text-2xl">Experience</h2>
-          {resume.experience.map((job) => (
-            <div key={job.company} className="pb-10">
-              <h3 className="text-sm font-bold uppercase">{job.title}</h3>
-              <h2 className="text-xl font-bold">{job.company}</h2>
-              <p className="text-sm italic">
-                {job.dates}
-                <span className="px-2 not-italic"> | </span>
-                {job.location}
-              </p>
-              <ul className="pt-3">
-                {job.description.map((desc) => (
-                  <li key={desc} className="ml-6 pl-2 text-gray-100 list-disc">
-                    {desc}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* Portfolio ===== */}
+      <Section id="portfolio" header="Portfolio" />
+      <div className="relative mx-auto md:container">
+        <div className="flex flex-wrap gap-4 justify-center mt-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.sys.id} project={project} />
           ))}
-
-          {/* <Button icon={faFileDownload} size="lg">
-            Download Resume
-          </Button> */}
         </div>
       </div>
 
       {/* Contact Form */}
+      <Section id="contact" header="Contact" />
       <div className="mx-auto px-8 py-16">
         <div className="relative mx-auto md:container">
           <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -159,14 +166,6 @@ export default function Home({ projects }) {
                 >
                   <FontAwesomeIcon icon={faLinkedin} size="3x" />
                 </a>
-                <a
-                  href="mailto:jmlyman424@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-300 hover:text-gray-100 transition-colors duration-150"
-                >
-                  <FontAwesomeIcon icon={faEnvelope} size="3x" />
-                </a>
               </div>
             </div>
             <div className="flex justify-center">
@@ -179,4 +178,18 @@ export default function Home({ projects }) {
   );
 }
 
-function SectionHeader({ title, subtitle }) {}
+function Section({ id, header, children }) {
+  return (
+    <div className="relative pt-16 mx-auto md:container">
+      <div className="text-center">
+        <h1
+          id={id}
+          className="text-black dark:text-white text-3xl font-extrabold sm:text-5xl scroll-mt-24"
+        >
+          {header}
+        </h1>
+      </div>
+      {children}
+    </div>
+  );
+}
