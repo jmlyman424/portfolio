@@ -57,8 +57,18 @@ export default function ProjectCard({ project }) {
       {/* Info Section */}
       <div className="flex flex-col gap-1">
         <div className="flex gap-2">
-          <p className="px-2 py-1 flex-none text-sm bg-white text-black rounded-sm">
-            <span className="font-bold text-purple-500 pr-1.5">|</span>
+          <p
+            className="px-2 py-1 flex-none text-sm bg-white text-black rounded-sm"
+            style={{
+              background: `color-mix(in srgb, ${gradient[0]}, #fff 80%)`,
+            }}
+          >
+            <span
+              className="font-bold pr-1.5"
+              style={{ color: `${gradient[gradient.length - 1]}` }}
+            >
+              |
+            </span>
             {type}
           </p>
         </div>
