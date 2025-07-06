@@ -22,7 +22,7 @@ export default function Project() {
 
       <div className="pt-4">
         <Image
-          src="http://placecats.com/800/800"
+          src="https://placecats.com/800/800"
           height="300"
           width="300"
           style={{ objectFit: 'cover' }}

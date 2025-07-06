@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Hero from '../components/UI/Hero';
-import Project from '../components/UI/Project';
+import ProjectCard from '../components/UI/ProjectCard';
 import Contact from '../components/UI/Contact';
 import resume from '../resume.json';
 
@@ -61,19 +61,21 @@ export default function Home({ projects }) {
       {/* Hero ===== */}
       <Hero />
 
-      {/* Projects ===== */}
+      {/* Portfolio ===== */}
       <div className="mx-auto p-8 pb-32">
         <div className="relative mx-auto md:container">
-          <span className="absolute -top-4 left-4 w-32 h-2 bg-blue-500 rounded-full" />
-          <h1
-            id="projects"
-            className="text-gray-50 text-4xl font-extrabold sm:text-5xl scroll-mt-24"
-          >
-            Projects
-          </h1>
-          <div className="flex flex-wrap gap-4 justify-center mt-8 md:justify-start">
+          <div className="text-center">
+            <h1
+              id="projects"
+              className="text-gray-50 text-3xl font-extrabold sm:text-5xl scroll-mt-24"
+            >
+              Portfolio
+            </h1>
+            <p className="pt-2">My Experience</p>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center mt-8">
             {projects.map((project) => (
-              <Project key={project.sys.id} project={project} />
+              <ProjectCard key={project.sys.id} project={project} />
             ))}
           </div>
         </div>
@@ -176,3 +178,5 @@ export default function Home({ projects }) {
     </div>
   );
 }
+
+function SectionHeader({ title, subtitle }) {}

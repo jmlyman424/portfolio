@@ -62,7 +62,7 @@ function ToggleTheme() {
     <FontAwesomeIcon
       icon={isDark ? faSun : faMoon}
       onClick={handleThemeChange}
-      className="fa-fw text-xl text-black dark:text-white hover:text-accent-1 cursor-pointer"
+      className="inline fa-fw text-xl text-black dark:text-white hover:text-accent-1 cursor-pointer"
     />
   );
 }
