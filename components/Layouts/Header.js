@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
-import { Fragment, useState } from 'react';
+import Image from 'next/image';
+import { Fragment, useEffect, useState } from 'react';
 import { MenuIcon } from '@heroicons/react/outline';
 import {
   Popover,
@@ -7,8 +10,7 @@ import {
   PopoverPanel,
   Transition,
 } from '@headlessui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import ThemeSwitch from '../UI/ThemeSwitch';
 
 const navLinks = [
   {
@@ -46,27 +48,6 @@ function NavLinks({ className }) {
   });
 }
 
-function ToggleTheme() {
-  const checkIsDarkSchemePreferred = () =>
-    // window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ?? false;
-    false;
-
-  const [isDark, setIsDark] = useState(checkIsDarkSchemePreferred());
-  console.log('initial colorscheme: ', checkIsDarkSchemePreferred());
-
-  function handleThemeChange() {
-    setIsDark(!isDark);
-  }
-
-  return (
-    <FontAwesomeIcon
-      icon={isDark ? faSun : faMoon}
-      onClick={handleThemeChange}
-      className="inline fa-fw text-xl text-black dark:text-white hover:text-accent-1 cursor-pointer"
-    />
-  );
-}
-
 function DesktopMenu() {
   return (
     <Popover as="nav" className="hidden gap-4 my-auto md:flex">
@@ -83,9 +64,9 @@ function MobileMenu() {
     <Popover as={Fragment}>
       {({ open }) => (
         <>
-          <ToggleTheme />
+          <ThemeSwitch />
           <PopoverButton aria-label="menu">
-            <MenuIcon className="p-1 w-8 h-8 text-gray-500 hover:bg-gray-100 rounded cursor-pointer transition-all duration-500 md:hidden" />
+            <MenuIcon className="p-1 w-8 h-8 hover:bg-gray-100 rounded cursor-pointer transition-all duration-500 md:hidden" />
           </PopoverButton>
 
           {open && (
@@ -117,18 +98,46 @@ function MobileMenu() {
 }
 
 export default function Header() {
-  return (
-    <header className="sticky z-50 top-0 w-full bg-white dark:bg-darkmode shadow">
-      <div className="flex flex-wrap items-center justify-between align-middle md:min-h-16 mx-auto px-8 py-3 max-w-screen-2xl">
-        <div className="flex align-middle">
-          <Link href="/" className="font-semibold dark:text-white">
-            Joseph Lyman
-          </Link>
-        </div>
+  const [atTop, setAtTop] = useState(true);
 
-        <div className="flex align-middle gap-6">
-          <DesktopMenu />
-          <MobileMenu />
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 100 ? setAtTop(false) : setAtTop(true);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const headerStyles = atTop ? 'top-8 px-8 max-w-[105rem]' : 'top-0 max-w-full';
+
+  return (
+    <header
+      className={`h-0 mx-auto sticky z-50 transition-all duration-300 font-display ${headerStyles}`}
+    >
+      <div
+        className={`shadow-xl shadow-gray-600/20 backdrop-blur-sm bg-white/90 dark:bg-darkmode/30 ${atTop ? 'rounded-xl' : ''}`}
+      >
+        <div className="max-w-content mx-auto px-8 flex flex-wrap items-center justify-between align-middle md:min-h-16 py-3">
+          <div className="flex align-middle">
+            <Link href="/" className="font-semibold dark:text-white">
+              {/* Joseph Lyman */}
+              <Image
+                src="/Logo.svg"
+                height="40"
+                width="160"
+                alt="logo"
+                className="dark:invert"
+              />
+            </Link>
+          </div>
+          <div className="flex items-center gap-6">
+            <DesktopMenu />
+            <MobileMenu />
+          </div>
         </div>
       </div>
     </header>

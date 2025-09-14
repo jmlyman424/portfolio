@@ -1,21 +1,26 @@
-import React from 'react';
-
 export default function Contact() {
-  const labelStyle = 'block mb-2 text-sm text-white dark:text-gray-400';
+  const labelStyle = 'block mb-2';
 
-  const inputStyle = `w-full mb-6 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md
-    focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300`;
+  const inputStyle = `min-h-10 w-full mb-6 px-3 py-2 bg-white dark:text-black placeholder-gray-500 border border-gray-300 rounded-md
+    focus:outline-none focus:ring focus:ring-accent-1 focus:border-accent-1 overflow-hidden`;
 
   return (
     <form
       name="Contact"
       action="/success"
       method="post"
-      className="max-w-[80rem] w-[58rem] p-8 text-black bg-gray-900 rounded-xl"
+      className="max-w-[80rem] w-[58rem] p-8 rounded-xl bg-gray-50 dark:bg-transparent border border-gray-200 dark:border-accent-1"
+      netlify-honeypot="bot-field"
       data-netlify="true"
     >
       {/* Netlify Forms hidden input */}
       <input type="hidden" name="form-name" value="Contact" />
+      <p className="hidden">
+        <label>
+          Don't fill this out if you're human:
+          <input name="bot-field" type="text" />
+        </label>
+      </p>
 
       {/* NAME */}
       <label htmlFor="name" className={labelStyle}>
@@ -59,7 +64,7 @@ export default function Contact() {
       {/* SUBMIT */}
       <button
         type="submit"
-        className="px-4 py-4 w-40 text-white bg-blue-700 hover:bg-blue-800 focus:bg-blue-800 rounded-md cursor-pointer transition-colors"
+        className="px-8 py-2 text-white bg-accent-1 hover:bg-accent-2 rounded-md cursor-pointer transition-colors"
       >
         Send!
       </button>
