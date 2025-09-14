@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+
 export default function Contact() {
   const labelStyle = 'block mb-2';
 
@@ -17,7 +19,7 @@ export default function Contact() {
       <input type="hidden" name="form-name" value="Contact" />
       <p className="hidden">
         <label>
-          Don't fill this out if you're human:
+          Don&apos;t fill this out if you&apos;re human:
           <input name="bot-field" type="text" />
         </label>
       </p>
@@ -64,7 +66,7 @@ export default function Contact() {
       {/* SUBMIT */}
       <button
         type="submit"
-        className="px-8 py-2 text-white bg-accent-1 hover:bg-accent-2 rounded-md cursor-pointer transition-colors"
+        className="px-8 py-2 text-white transition-colors rounded-md cursor-pointer bg-accent-1 hover:bg-accent-2"
       >
         Send!
       </button>

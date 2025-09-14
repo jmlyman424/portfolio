@@ -1,12 +1,13 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import { Transition } from '@headlessui/react';
-import WaveSVG from '../SVG/wave';
 import Image from 'next/image';
+import WaveSVG from '../SVG/Wave';
 
 export default function Hero() {
   return (
     <section className="relative w-full py-32">
       <div className="absolute inset-0 overflow-hidden bg-darkmode">
-        <div className="invisible stars dark:visible"></div>
+        <div className="invisible stars dark:visible" />
       </div>
 
       <div className="relative max-w-[90rem] mx-auto min-h-[32rem] z-10 inset-0 flex flex-col lg:flex-row gap-8 p-8 lg:justify-between justify-center items-center">
@@ -32,7 +33,8 @@ export default function Hero() {
           <p className="text-lg">
             I create fully custom, hand-coded websites designed for performance,
             aesthetics, and readable code. Take a look at my projects to see
-            what I can do — and feel free to reach out if you'd like to connect.
+            what I can do — and feel free to reach out if you&apos;d like to
+            connect.
           </p>
           <div className="flex justify-center gap-8 mt-6 whitespace-nowrap lg:justify-start">
             <a

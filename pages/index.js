@@ -2,14 +2,13 @@ import Head from 'next/head';
 import { createClient } from 'contentful';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import Hero from '../components/UI/Hero';
-import ProjectCard from '../components/UI/ProjectCard';
-import Contact from '../components/UI/Contact';
 import {
-  faEnvelope,
   faFileArrowDown,
   faLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
+import Hero from '../components/UI/Hero';
+import ProjectCard from '../components/UI/ProjectCard';
+import Contact from '../components/UI/Contact';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -76,7 +75,7 @@ export default function Home({ projects }) {
             TypeScript, and React.
           </p>
           <p>
-            I'm passionate about staying up to date with the latest design
+            I&apos;m passionate about staying up to date with the latest design
             trends and development practices in web development, always pushing
             myself to learn and grow as the industry evolves.
           </p>
@@ -86,7 +85,7 @@ export default function Home({ projects }) {
             work I deliver.
           </p>
           <p>
-            When I'm not designing or developing, I spend my time cycling,
+            When I&apos;m not designing or developing, I spend my time cycling,
             playing disc golf or video games, and adventuring with my friends
             and family.
           </p>

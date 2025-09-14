@@ -1,15 +1,19 @@
-const WaveSVG = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    // fill="none"
-    preserveAspectRatio="none"
-    viewBox="0 0 1920 500"
-    {...props}
-  >
-    <path
-      // fill="red"
-      d="M251.463 378.438C126.937 315.555 47.343 253.833 0 209.721V501h1920V0c-356.51 157.88-717.07 312.544-986.268 407.584-269.195 95.039-457.636 84.299-682.269-29.146Z"
-    />
-  </svg>
-);
+/* eslint-disable react/jsx-props-no-spreading */
+
+function WaveSVG(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      // fill="none"
+      preserveAspectRatio="none"
+      viewBox="0 0 1920 500"
+      {...props}
+    >
+      <path
+        // fill="red"
+        d="M251.463 378.438C126.937 315.555 47.343 253.833 0 209.721V501h1920V0c-356.51 157.88-717.07 312.544-986.268 407.584-269.195 95.039-457.636 84.299-682.269-29.146Z"
+      />
+    </svg>
+  );
+}
 export default WaveSVG;

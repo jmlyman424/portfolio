@@ -52,7 +52,7 @@ function DesktopMenu() {
   return (
     <Popover as="nav" className="hidden gap-4 my-auto md:flex">
       <ul className="flex gap-6">
-        <NavLinks className="py-2 text-gray-700 dark:text-white font-semibold hover:text-accent-1 transition-all duration-200 cursor-pointer" />
+        <NavLinks className="py-2 font-semibold text-gray-700 transition-all duration-200 cursor-pointer dark:text-white hover:text-accent-1" />
         {/* <ToggleTheme /> */}
       </ul>
     </Popover>
@@ -66,7 +66,7 @@ function MobileMenu() {
         <>
           <ThemeSwitch />
           <PopoverButton aria-label="menu">
-            <MenuIcon className="p-1 w-8 h-8 hover:bg-gray-100 rounded cursor-pointer transition-all duration-500 md:hidden" />
+            <MenuIcon className="w-8 h-8 p-1 transition-all duration-500 rounded cursor-pointer hover:bg-gray-100 md:hidden" />
           </PopoverButton>
 
           {open && (
@@ -80,11 +80,11 @@ function MobileMenu() {
               leaveTo="transform scale-95 opacity-0"
             >
               <PopoverPanel
-                className="absolute z-10 right-0 top-1 flex justify-center mt-14 w-full h-screen bg-white dark:bg-darkmode overflow-hidden md:hidden"
+                className="absolute right-0 z-10 flex justify-center w-full h-screen overflow-hidden bg-white top-1 mt-14 dark:bg-darkmode md:hidden"
                 static
               >
                 <nav className="flex my-auto">
-                  <ul className="flex flex-col gap-12 text-center text-2xl">
+                  <ul className="flex flex-col gap-12 text-2xl text-center">
                     <NavLinks styles="py-2 px-6 text-black hover:text-accent-1 dark:text-white transition-all duration-200 cursor-pointer" />
                   </ul>
                 </nav>
@@ -101,9 +101,8 @@ export default function Header() {
   const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () =>
       window.scrollY > 100 ? setAtTop(false) : setAtTop(true);
-    };
 
     window.addEventListener('scroll', handleScroll);
 
@@ -121,7 +120,7 @@ export default function Header() {
       <div
         className={`shadow-xl shadow-gray-600/20 backdrop-blur-sm bg-white/90 dark:bg-darkmode/30 ${atTop ? 'rounded-xl' : ''}`}
       >
-        <div className="max-w-content mx-auto px-8 flex flex-wrap items-center justify-between align-middle md:min-h-16 py-3">
+        <div className="flex flex-wrap items-center justify-between px-8 py-3 mx-auto align-middle max-w-content md:min-h-16">
           <div className="flex align-middle">
             <Link href="/" className="font-semibold dark:text-white">
               {/* Joseph Lyman */}

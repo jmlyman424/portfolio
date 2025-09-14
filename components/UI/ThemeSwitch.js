@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSpinner, faSun } from '@fortawesome/free-solid-svg-icons';
 
-const ThemeSwitch = () => {
+function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -17,12 +17,12 @@ const ThemeSwitch = () => {
   return (
     <FontAwesomeIcon
       icon={resolvedTheme === 'dark' ? faSun : faMoon}
-      onClick={() => {
-        resolvedTheme === 'dark' ? setTheme('light') : setTheme('dark');
-      }}
+      onClick={() =>
+        resolvedTheme === 'dark' ? setTheme('light') : setTheme('dark')
+      }
       className="inline text-xl transition-transform duration-300 cursor-pointer fa-fw hover:text-accent-1"
     />
   );
-};
+}
 
 export default ThemeSwitch;
