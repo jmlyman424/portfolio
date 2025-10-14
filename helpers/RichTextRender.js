@@ -1,5 +1,6 @@
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Image from 'next/image';
 
 export default function RichTextRender({ content }) {
   const options = {

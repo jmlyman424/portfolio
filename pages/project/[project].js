@@ -4,8 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import ProjectType from '../../components/UI/ProjectType';
 import RichTextRender from '../../helpers/RichTextRender';
+import Custom404 from '../404';
 
 export const getStaticPaths = async () => {
+  console.log(
+    'getStaticPaths',
+    process.env.CONTENTFUL_SPACE_ID,
+    process.env.CONTENTFUL_ACCESS_TOKEN
+  );
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -24,7 +30,33 @@ export const getStaticPaths = async () => {
   };
 };
 
+export async function generateStaticParams() {
+  console.log(
+    'generateStaticParams',
+    process.env.CONTENTFUL_SPACE_ID,
+    process.env.CONTENTFUL_ACCESS_TOKEN
+  );
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: 'project' });
+  const posts = res.items;
+
+  const paths = posts.map((post) => ({
+    params: { project: post.fields.slug },
+  }));
+
+  return { paths };
+}
+
 export async function getStaticProps({ params }) {
+  console.log(
+    'getStaticProps',
+    process.env.CONTENTFUL_SPACE_ID,
+    process.env.CONTENTFUL_ACCESS_TOKEN
+  );
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -45,6 +77,8 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Project({ project }) {
+  if (!project) return <Custom404 />;
+
   const { title, subtitle, content, tags, type, projectUrl, projectSource } =
     project.fields;
   const image = project.fields.thumbnail.fields;
