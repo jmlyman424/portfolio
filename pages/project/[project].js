@@ -7,11 +7,6 @@ import RichTextRender from '../../helpers/RichTextRender';
 import Custom404 from '../404';
 
 export const getStaticPaths = async () => {
-  console.log(
-    'getStaticPaths',
-    process.env.CONTENTFUL_SPACE_ID,
-    process.env.CONTENTFUL_ACCESS_TOKEN
-  );
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -31,11 +26,6 @@ export const getStaticPaths = async () => {
 };
 
 export async function generateStaticParams() {
-  console.log(
-    'generateStaticParams',
-    process.env.CONTENTFUL_SPACE_ID,
-    process.env.CONTENTFUL_ACCESS_TOKEN
-  );
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -52,11 +42,6 @@ export async function generateStaticParams() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(
-    'getStaticProps',
-    process.env.CONTENTFUL_SPACE_ID,
-    process.env.CONTENTFUL_ACCESS_TOKEN
-  );
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
