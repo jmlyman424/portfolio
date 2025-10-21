@@ -58,17 +58,18 @@ export default function RichTextRender({ content }) {
         return (
           <figure className="p-2 mb-4 bg-gray-100 rounded dark:bg-gray-800">
             <a
-              href={`https://${image.url}`}
+              href={`https:${image.url}`}
               target="_blank"
               title="Open image in a new tab"
               rel="noreferrer"
             >
               <Image
-                src={`https://${image.url}`}
+                src={`https:${image.url}`}
                 height={image.details.image.height}
                 width={image.details.image.width}
                 alt={node.data.target.fields.description}
                 className="max-h-[500px] object-contain"
+                // unoptimized
               />
             </a>
             <figcaption className="px-2 pt-2 text-sm italic text-gray-700 dark:text-gray-200">
